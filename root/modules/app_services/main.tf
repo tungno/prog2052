@@ -1,4 +1,4 @@
-# root/modules/app_service/main.tf
+# modules/app_services/main.tf
 
 resource "azurerm_service_plan" "app_service_plan" {
   name                = var.app_service_plan_name

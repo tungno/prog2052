@@ -1,0 +1,261 @@
+/* Calendar.css */
+
+/* General container styles */
+.calendar-container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 1200px; /* Limit maximum width for large screens */
+}
+
+/* View control buttons (Day, Week, Month, Year) */
+.view-controls {
+    margin-bottom: 20px;
+}
+
+.view-controls button {
+    background-color: #006699; /* Secondary color for non-active view buttons */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Highlight the active view */
+.view-controls button.active {
+    background-color: #003366; /* Primary color for active view buttons */
+    font-weight: bold;
+}
+
+.view-controls button:hover {
+    background-color: #0099cc; /* Highlight color for hover state */
+}
+
+/* Calendar control buttons (Previous, Next, Add Event) */
+.calendar-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-controls .current-month {
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 24px; /* Make the month name larger */
+    color: #003366; /* Primary color */
+}
+
+/* Button to add events */
+.add-event-btn {
+    background-color: #28a745; /* Green for Add Event */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-event-btn:hover {
+    background-color: #218838;
+}
+
+/* Today button styling */
+.today-button {
+    margin-top: 15px;
+}
+
+.today-button button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.today-button button:hover {
+    background-color: #0056b3;
+}
+
+/* Generic button styling */
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Calendar Table Styles */
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ccffff; /* Light background color for table */
+}
+
+.calendar-table th, .calendar-table td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+.calendar-table th {
+    background-color: #ffcc00; /* Highlighted yellow for table headers */
+    font-weight: bold;
+    color: white; /* Ensure text contrast */
+}
+
+.calendar-table td {
+    position: relative;
+    background-color: #ffffff;
+}
+
+.calendar-table .calendar-day {
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-table .calendar-day:hover {
+    background-color: #f0f8ff;
+    border: 2px solid #0099cc; /* Highlight color on hover */
+}
+
+/* Event stars display in the calendar */
+.event-stars {
+    margin-top: 10px;
+}
+
+.event-star {
+    font-size: 14px;
+    color: #ffcc00;
+}
+
+/* Modal overlay styles for adding events */
+.event-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.event-modal-content {
+    background-color: white;
+    padding: 30px;
+    width: 400px;
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.event-modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.event-modal-content label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+.event-modal-content input,
+.event-modal-content textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+.event-modal-content input:focus,
+.event-modal-content textarea:focus {
+    border-color: #007bff;
+}
+
+/* Styling for text area inside the modal */
+.event-modal-content textarea {
+    height: 80px;
+    resize: none;
+}
+
+.event-modal-privacy {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Buttons inside the modal */
+.event-modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.submit-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+.cancel-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background-color: #c82333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .calendar-controls .current-month {
+        font-size: 16px;
+    }
+
+    .view-controls button,
+    .add-event-btn,
+    .today-button button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}

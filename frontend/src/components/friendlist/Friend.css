@@ -1,0 +1,33 @@
+.friend-container {
+    padding: 20px;
+    flex-grow: 1; /* Ensures this container takes up the available space */
+}
+
+.friend-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.friend-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px; /* Add some spacing between sections */
+}
+
+.friend-search, .friend-requests, .your-friends {
+    margin-bottom: 20px;
+    width: 30%;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .friend-content {
+        flex-direction: column; /* Stack the sections vertically */
+        align-items: center; /* Center the content */
+    }
+
+    .friend-search, .friend-requests, .your-friends {
+        width: 100%; /* Make each section take full width on mobile */
+    }
+}

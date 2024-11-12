@@ -1,0 +1,29 @@
+.your-friends-section {
+    text-align: center;
+}
+
+.friend-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.friend-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove-friend-button {
+    padding: 5px 10px;
+    background-color: #FF4C4C; /* Red button for removing a friend */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-friend-button:hover {
+    background-color: #FF3333;
+}

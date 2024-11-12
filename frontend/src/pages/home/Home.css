@@ -1,0 +1,77 @@
+/* Main container for the home page */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f4f8;
+    min-height: calc(100vh - 150px); /* Adjust height excluding header and footer */
+}
+
+/* Date and time container styling */
+.date-time-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.date-time-container h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.date-time-container h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.date-time-container h3 {
+    font-size: 20px;
+    color: #555;
+}
+
+/* Grid layout for the components */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    width: 80%;
+    max-width: 1000px;
+}
+
+/* Link styling for components */
+.component-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Individual component card styling */
+.component {
+    background-color: #005B96;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.component:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon inside each component */
+.component img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+/* Component title */
+.component h4 {
+    font-size: 18px;
+    margin: 0;
+    color: #fff;
+}

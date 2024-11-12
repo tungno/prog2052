@@ -1,0 +1,139 @@
+/* Main container styling */
+.news-container {
+    max-width: 1200px; /* Increased for better grid spacing */
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Mode selection buttons */
+.news-mode-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.news-mode-buttons button {
+    /* ... existing styles ... */
+}
+
+/* Search form styling */
+.news-search-form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.news-search-input {
+    padding: 10px;
+    width: 60%;
+    max-width: 400px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.news-search-button {
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.news-search-button:hover {
+    background-color: #357ABD;
+}
+
+/* Styling for loading and error messages */
+.loading, .error {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    margin: 20px 0;
+}
+
+/* Container for the articles grid */
+.news-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Article card layout */
+.news-article {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    /* Removed margin-bottom as grid gap handles spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.news-article:hover {
+    transform: translateY(-3px);
+}
+
+.news-article h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.news-article p {
+    color: #666;
+    font-size: 14px;
+}
+
+.news-article a {
+    color: #4a90e2;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.news-article a:hover {
+    text-decoration: underline;
+}
+
+/* Image styling for each news article */
+.news-article img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* See More button styling */
+.see-more-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.see-more-button:hover {
+    background-color: #357ABD;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .news-articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .news-articles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-search-input {
+        width: 80%;
+    }
+}

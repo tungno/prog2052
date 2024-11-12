@@ -1,0 +1,182 @@
+/* General layout for the journal page */
+.journal-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Georgia', serif;
+  color: #333;
+  background-color: #f5f5f5;
+  background-image: url('../../assets/textured-background.jpg');
+  background-size: cover;
+  min-height: 100vh;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Journal title styling */
+.journal-page h1 {
+  font-size: 2.5rem;
+  color: #6a4c93;
+  margin-bottom: 20px;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* Flex layout for journal components */
+.journal-layout {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 150px); /* Adjust height based on header/title */
+  gap: 50px;
+}
+
+/* Entry List Styling */
+.journal-list {
+  flex: 0 0 30%; /* Fixed size of 30% */
+  background-color: #ffffff;
+  padding: 20px;
+  border: 2px solid #e1bee7;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-height: 100%; /* Ensure it can take the full height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effect */
+}
+
+/* Add hover effect to Entry List */
+.journal-list:hover {
+  transform: scale(1.02); /* Slightly scale up */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Add more shadow on hover */
+}
+
+/* Entry List Heading */
+.journal-list h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #6a4c93;
+  text-align: center;
+}
+
+/* Individual journal item styling */
+.journal-item {
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #fafafa;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border-left: 5px solid #6a4c93;
+  transition: transform 0.2s, background-color 0.2s; /* Transition for hover effect */
+}
+
+/* Add hover effect to journal items */
+.journal-item:hover {
+  transform: translateY(-3px); /* Slightly lift the item */
+  background-color: #f1f1f1; /* Change background color on hover */
+}
+
+/* Journal item text */
+.journal-item strong {
+  color: #6a4c93;
+}
+
+.journal-item p {
+  margin: 5px 0;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90%;
+}
+
+/* Button styles */
+.journal-item button {
+  margin-top: 5px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #6a4c93;
+  transition: background-color 0.3s, transform 0.2s; /* Transition for hover effect */
+}
+
+/* Add hover effect to journal item buttons */
+.journal-item button:hover {
+  background-color: #5a3e7e; /* Darker color on hover */
+  transform: scale(1.05); /* Slightly grow on hover */
+}
+
+/* Delete button styles */
+.journal-item .delete-button {
+  background-color: #e74c3c; /* Red color for delete button */
+}
+
+.journal-item .delete-button:hover {
+  background-color: #c0392b; /* Darker red on hover */
+  transform: scale(1.05); /* Slightly grow on hover */
+}
+
+/* Entry Editor Styling */
+.journal-input {
+  flex: 0 0 60%; /* Fixed size of 60% */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 2px solid #e1bee7;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  height: 100%; /* Make it take the full height of its container */
+}
+
+/* Date input styling */
+.journal-input input[type="date"],
+.journal-input textarea,
+.journal-input button {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Textarea styling */
+.journal-input textarea {
+  flex-grow: 1; /* Allow the textarea to grow and take available space */
+  min-height: 200px; /* Increase the minimum height */
+  max-height: 500px; /* Optionally set a higher maximum height */
+  resize: vertical; /* Allow vertical resizing */
+  background-color: #f9f9f9;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Save/Update button styling */
+.journal-input button {
+  background-color: #6a4c93;
+  transition: background-color 0.3s, transform 0.2s; /* Transition for hover effect */
+}
+
+.journal-input button:hover {
+  background-color: #5a3e7e;
+  transform: scale(1.05); /* Slightly grow on hover */
+}
+
+/* Notification Styling */
+.error-message,
+.success-message {
+  color: #fff;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.error-message {
+  background-color: #e74c3c;
+}
+
+.success-message {
+  background-color: #28a745;
+}

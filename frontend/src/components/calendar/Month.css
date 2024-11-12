@@ -1,0 +1,186 @@
+/* Calendar Table */
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ccffff; /* Light background color */
+}
+
+.calendar-table th, .calendar-table td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+.calendar-table th {
+    background-color: #006699;
+    font-weight: bold;
+    color: white;
+}
+
+.calendar-table td {
+    position: relative;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-table .calendar-day {
+    cursor: pointer;
+    background-color: #ffffff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-table .calendar-day:hover {
+    background-color: #f0f8ff;
+    border: 2px solid #0099cc;
+}
+
+/* Event dots display in the calendar */
+.event-dots {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    margin-left: 5px; /* Add some space from the left */
+}
+
+.event-dot {
+    display: flex;
+    align-items: center; /* Align dot with text vertically */
+    margin-bottom: 5px;
+}
+
+.event-dot span {
+    margin-left: 10px; /* Space between dot and status text */
+    font-size: 12px;
+    color: #333; /* Darker color for readability */
+}
+
+/* Yellow dot */
+.event-dot::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ffcc00; /* Yellow dot */
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure modal is above other content */
+}
+
+/* Modal Container */
+.modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    width: 400px; /* Set width for the modal */
+    max-width: 90%; /* Ensure it is responsive */
+    z-index: 1001;
+}
+
+/* Modal header */
+.modal h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #333;
+}
+
+/* Modal event list */
+.modal ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal ul li {
+    margin-bottom: 15px;
+}
+
+.modal ul li strong {
+    color: #006699; /* Highlighted text color */
+}
+
+/* Close button for the modal */
+.modal button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #006699;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background-color: #004466;
+}
+
+/* Month.css or Calendar.css */
+
+/* Ensure calendar-day is positioned relatively */
+.calendar-day {
+    position: relative;
+    /* ... existing styles ... */
+}
+
+/* Style for the friend event star icon */
+.friend-event-star {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: gold; /* Gold color for the star */
+}
+
+/* Optional: Add hover effect for the star icon */
+.friend-event-star:hover {
+    color: orange;
+}
+
+.event-actions {
+    margin-top: 10px;
+}
+
+.event-actions button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.event-actions button:first-child {
+    background-color: #007bff;
+    color: white;
+}
+
+.event-actions button:first-child:hover {
+    background-color: #0056b3;
+}
+
+.event-actions button:last-child {
+    background-color: #dc3545;
+    color: white;
+}
+
+.event-actions button:last-child:hover {
+    background-color: #c82333;
+}

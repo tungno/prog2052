@@ -1,0 +1,237 @@
+/* File: frontend/src/components/LoginSignup/LoginSignup.css */
+
+/* General styling for the Login/Signup container */
+.login-signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #3498db, #2ecc71); /* Softer gradient */
+    padding: 20px; /* Added padding for better spacing on smaller screens */
+}
+
+.login-signup-container h1 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Form elements container */
+.login-signup-container input {
+    width: 300px;
+    padding: 12px 15px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    background-color: white;
+}
+
+.login-signup-container input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+    outline: none;
+}
+
+/* Button styles */
+.login-signup-container button {
+    width: 100%;
+    max-width: 320px;
+    padding: 12px 15px;
+    background-color: #4a90e2;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.login-signup-container button:hover {
+    background-color: #3a78c2;
+    transform: scale(1.02);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Sign-up/Login text below the button */
+.login-signup-container p {
+    color: #ffffff;
+    font-size: 16px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.login-signup-container span {
+    color: #ffdd57;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.login-signup-container span:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Error message styling */
+.error-message {
+    color: #ffffff;
+    background-color: #ff4444; /* Bright red background */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.success-message {
+    color: #ffffff;
+    background-color: #4caf50; /* Green background */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Password requirements styling */
+.password-requirements {
+    width: 300px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.password-requirements p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.password-requirements ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.password-requirements li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.password-requirements li svg {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.password-requirements .valid {
+    color: #00e676; /* Green for valid */
+}
+
+.password-requirements .invalid {
+    color: #ff5555; /* Lighter red for invalid, more readable */
+}
+
+/* Password accepted message */
+.password-accepted {
+    color: #00e676;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Resend OTP section styling */
+.resend-otp-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.resend-otp-section button {
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    width: 150px;
+    margin-bottom: 5px;
+}
+
+.resend-otp-section button:hover {
+    background-color: #3a78c2;
+    transform: scale(1.02);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resend-otp-section button:disabled {
+    background-color: #a0c4e3;
+    cursor: not-allowed;
+}
+
+.resend-otp-section p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* Password strength meter (optional enhancement) */
+.password-strength-meter {
+    width: 300px;
+    height: 5px;
+    background-color: #ccc;
+    border-radius: 3px;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.password-strength-meter .strength-bar {
+    height: 100%;
+    transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.password-strength-meter .strong {
+    width: 100%;
+    background-color: #00e676; /* Green */
+}
+
+.password-strength-meter .weak {
+    width: 50%;
+    background-color: #ff5555; /* Red */
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Media query for smaller devices */
+@media (max-width: 768px) {
+    .login-signup-container input {
+        width: 250px;
+    }
+
+    .login-signup-container button {
+        max-width: 280px;
+    }
+
+    .login-signup-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .password-requirements {
+        width: 250px;
+    }
+
+    .password-strength-meter {
+        width: 250px;
+    }
+}

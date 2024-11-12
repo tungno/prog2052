@@ -1,0 +1,90 @@
+/* General header styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2f3e50;
+    color: white;
+}
+
+.logo-img {
+    height: 40px;
+    cursor: pointer;
+}
+
+.greeting {
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+/* Header links section */
+.header-links {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+    position: relative;
+}
+
+.profile-link {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Dropdown content styling */
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.dropdown-content a,
+.dropdown-content button {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+    margin: 5px 0;
+    background-color: #444;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover,
+.dropdown-content button:hover {
+    background-color: #555;
+}
+
+/* Close dropdown when clicking outside */
+.dropdown-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    background-color: #4a90e2;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login-link:hover {
+    background-color: #357abd;
+}

@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  backend:
+    image: tungno/dailyverse-backend:latest
+    environment:
+      JWT_SECRET_KEY: "__JWT_SECRET_KEY__"
+      EMAIL_USER: "__EMAIL_USER__"
+      SMTP_HOST: "__SMTP_HOST__"
+      SMTP_PORT: "__SMTP_PORT__"
+    secrets:
+      - EMAIL_PASS
+    deploy:
+      replicas: 4
+      restart_policy:
+        condition: on-failure
+    networks:
+      - app-network
+      - external-network
+    ports:
+      - "8080:8080"
+
+  frontend:
+    image: tungno/dailyverse-frontend:latest
+    deploy:
+      replicas: 4
+      restart_policy:
+        condition: on-failure
+    networks:
+      - app-network
+    ports:
+      - "80:80"
+
+secrets:
+  EMAIL_PASS:
+    external: true
+
+networks:
+  app-network:
+    driver: overlay
+  external-network:
+    external: true

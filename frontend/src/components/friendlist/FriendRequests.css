@@ -1,0 +1,28 @@
+.friend-requests-section {
+    text-align: center;
+}
+
+.friend-requests-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.friend-request-item {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accept-friend-button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.accept-friend-button:hover {
+    background-color: #45a049;
+}

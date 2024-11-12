@@ -45,4 +45,3 @@ module "frontend_app_service" {
   docker_image_tag      = "latest"
 }
 
-#deploy"

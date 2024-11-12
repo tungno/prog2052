@@ -19,7 +19,7 @@ resource "azurerm_resource_group" "rg" {
 
 # Backend App Service Module
 module "backend_app_service" {
-  source                = "./modules/app_service"
+  source                = "./modules/app_services"
   app_service_plan_name = "${var.backend_app_service_plan_name}${local.workspace_suffix}"
   resource_group_name   = azurerm_resource_group.rg.name
   location              = var.location
@@ -33,7 +33,7 @@ module "backend_app_service" {
 
 # Frontend App Service Module
 module "frontend_app_service" {
-  source                = "./modules/app_service"
+  source                = "./modules/app_services"
   app_service_plan_name = "${var.frontend_app_service_plan_name}${local.workspace_suffix}"
   resource_group_name   = azurerm_resource_group.rg.name
   location              = var.location

@@ -44,28 +44,29 @@ jobs:
 
       - name: Create Backend App Settings tfvars File
         run: |
-          cat <<EOF > ./root/backend_app_settings.tfvars
+          cat > ./root/backend_app_settings.tfvars <<EOF
           backend_app_service_settings = {
             JWT_SECRET_KEY = "${{ secrets.JWT_SECRET_KEY }}"
             EMAIL_USER     = "${{ secrets.EMAIL_USER }}"
             SMTP_HOST      = "${{ secrets.SMTP_HOST }}"
             SMTP_PORT      = "${{ secrets.SMTP_PORT }}"
+            EMAIL_PASS     = "${{ secrets.EMAIL_PASS }}"
           }
           EOF
 
-      - name: Terraform Init
-        run: terraform init
+      - name: Terraform Init (Backend)
         working-directory: ./root
+        run: terraform init
 
       - name: Terraform Apply (Backend)
-        run: terraform apply -auto-approve -var-file="backend_app_settings.tfvars"
         working-directory: ./root
+        run: terraform apply -auto-approve -var-file="backend_app_settings.tfvars"
 
       - name: Get Backend Hostname
         id: get_backend_hostname
+        working-directory: ./root
         run: |
           echo "backend_hostname=$(terraform output -raw backend_app_service_default_hostname)" >> $GITHUB_ENV
-        working-directory: ./root
 
       - name: Build and Push Backend Image
         uses: docker/build-push-action@v4
@@ -87,15 +88,15 @@ jobs:
 
       - name: Create Frontend App Settings tfvars File
         run: |
-          cat <<EOF > ./root/frontend_app_settings.tfvars
+          cat > ./root/frontend_app_settings.tfvars <<EOF
           frontend_app_service_settings = {
             REACT_APP_BACKEND_URL = "https://${{ env.backend_hostname }}"
           }
           EOF
 
       - name: Terraform Apply (Frontend)
-        run: terraform apply -auto-approve -var-file="frontend_app_settings.tfvars"
         working-directory: ./root
+        run: terraform apply -auto-approve -var-file="frontend_app_settings.tfvars"
 
       - name: Restart Backend App Service
         run: |

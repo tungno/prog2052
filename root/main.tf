@@ -44,3 +44,5 @@ module "frontend_app_service" {
   docker_image_name     = "${var.dockerhub_username}/dailyverse-frontend"
   docker_image_tag      = "latest"
 }
+
+#deploy"

@@ -63,4 +63,5 @@ variable "frontend_app_service_name" {
 variable "frontend_app_service_settings" {
   description = "A map of app settings for the frontend Web App"
   type        = map(string)
+  default = {}
 }

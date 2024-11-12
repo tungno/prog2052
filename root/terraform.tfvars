@@ -11,3 +11,7 @@ backend_app_service_name      = "app-backend-tf-prog2052"
 
 frontend_app_service_plan_name = "asp-frontend-tf-prog2052"
 frontend_app_service_name      = "app-frontend-tf-prog2052"
+
+frontend_app_service_settings = {
+  REACT_APP_BACKEND_URL = "https://your-backend-url"
+}

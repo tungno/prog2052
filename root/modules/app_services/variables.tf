@@ -47,3 +47,9 @@ variable "docker_image_tag" {
   type        = string
   default     = "latest"
 }
+
+variable "backend_hostname" {
+  description = "The hostname of the backend App Service"
+  type        = string
+  default     = ""
+}

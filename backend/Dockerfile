@@ -1,32 +1,35 @@
-# Use the official Golang image as the base image
-FROM golang:1.17-alpine AS builder
+# backend/Dockerfile
 
-# Set the working directory inside the container
+# Stage 1: Build the Go application
+FROM golang:1.21-alpine AS builder
+
 WORKDIR /app
 
-# Copy go.mod and go.sum
+# Copy dependency files and download Go modules
 COPY go.mod go.sum ./
-
-# Download dependencies
 RUN go mod download
 
-# Copy the rest of the source code
+# Copy the source code to the container
 COPY . .
 
-# Build the Go application
-RUN go build -o main ./cmd/main.go
+# Build the Go application binary from the cmd directory
+RUN go build -o main ./cmd
 
-# Use a minimal base image for the final image
+# Stage 2: Set up the final runtime environment
 FROM alpine:latest
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the binary from the builder
+# Copy the built binary from the builder stage
 COPY --from=builder /app/main .
 
-# Expose port 8080
+# Copy Firebase credentials into the container
+COPY ./db/prog2052-project-firebase-adminsdk-hfyvm-bb27e2ade7.json /app/db/prog2052-project-firebase-adminsdk-hfyvm-bb27e2ade7.json
+
+# Expose the port the application listens on
 EXPOSE 8080
 
-# Set the entrypoint command
-CMD ["./main"]
+# Run the Go application
+CMD ["./main", "-host", "0.0.0.0"]
+# Ensure the backend is accessible from other containers and hosts
+

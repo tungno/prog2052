@@ -21,6 +21,7 @@ resource "azurerm_linux_web_app" "app_service" {
   app_settings = merge(var.app_settings, {
     "WEBSITES_PORT"               = "8080"
     "DOCKER_CUSTOM_IMAGE_NAME"    = "${var.docker_image_name}:${var.docker_image_tag}"
+    "DOCKER_REGISTRY_SERVER_URL"  = "https://index.docker.io"
     # Optional: Docker registry settings
     # "DOCKER_REGISTRY_SERVER_URL"      = var.registry_url
     # "DOCKER_REGISTRY_SERVER_USERNAME" = var.registry_username
